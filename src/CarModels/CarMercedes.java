@@ -31,4 +31,8 @@ public abstract class CarMercedes implements Car {
 	public void blockWindows() {
 		System.out.println("General behavior of " + carType + " blockWindow");
 	}
+	
+	void Buildcar() {
+		
+	}
 }

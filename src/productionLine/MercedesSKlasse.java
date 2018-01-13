@@ -7,19 +7,20 @@ public class MercedesSKlasse extends CarMercedes {
 	private String carBrand = "Mercedes S Klasse";
 
 	public MercedesSKlasse() {
-		boolean productionLineStatus = true;
-		System.out.println("Production of car" + getCarType() + " started");
+		boolean testCar = true;
 		try {
-			start();
-			stop();
+			if (buildCar()) {
+				start();
+				stop();
+			}
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
-			productionLineStatus = false;
+			testCar = false;
 		} finally {
-			if (productionLineStatus)
-				System.out.println("Success");
+			if (testCar)
+				System.out.println("Success start/stop");
 			else
-				System.out.println("Production of car Exception STOP!");
+				System.out.println("Car did not start !");
 		}
 	}
 
@@ -44,6 +45,30 @@ public class MercedesSKlasse extends CarMercedes {
 	@Override
 	public void openDoor() {
 		System.out.println("Door of this model " + getCarType() + " opens to the left from inside of car.");
+	}
+
+	@Override
+	public void blockWindows() {
+		System.out.println("Door of this model " + getCarType() + " opens all windows automatically.");
+	}
+
+	@Override
+	public boolean buildCar() {
+		boolean productionLineStatus = true;
+		System.out.println("Production of car" + getCarType() + " started");
+		try {
+			openDoor();
+			blockWindows();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			productionLineStatus = false;
+		} finally {
+			if (productionLineStatus)
+				System.out.println("Production success");
+			else
+				System.out.println("Production of car Exception STOP!");
+		}
+		return productionLineStatus;
 	}
 
 }

@@ -16,4 +16,10 @@ public class MercedesGLA extends CarMercedes {
 		
 	}
 
+	@Override
+	public boolean buildCar() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

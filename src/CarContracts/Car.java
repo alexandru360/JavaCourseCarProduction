@@ -9,4 +9,6 @@ public interface Car {
 	void openDoor();
 
 	void blockWindows();
+	
+	boolean buildCar();
 }
