@@ -14,17 +14,16 @@ public class RunProductionLine {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ProduceCarModels oBuildCar = new ProduceCarModels();
-		List<CarBrand> oCars = oBuildCar.BuildCarType(CarBrandModel.FORD, 100);
-//		ProduceCarModels.BuildCarType(CarBrandModel.FORD);
-//		ProduceCarModels.BuildCarType(CarBrandModel.BMW);
-//		ProduceCarModels.BuildCarType(CarBrandModel.MERCEDES);
-
+		List<CarBrand> oCars = ProduceCarModels.BuildCarType(CarBrandModel.FORD, 100);
 		for(CarBrand iteratorVariable : oCars){
 			iteratorVariable.StartEngine();
 			iteratorVariable.StopEngine();
 		}
 		
+//		ProduceCarModels oBuildCar = new ProduceCarModels();
+//		ProduceCarModels.BuildCarType(CarBrandModel.FORD);
+//		ProduceCarModels.BuildCarType(CarBrandModel.BMW);
+//		ProduceCarModels.BuildCarType(CarBrandModel.MERCEDES);
 		
 		
 		// processMap(new LinkedHashMap<String, Integer>());
