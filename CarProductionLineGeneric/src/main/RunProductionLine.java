@@ -1,8 +1,9 @@
 package main;
 
-import java.util.LinkedHashMap;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 import CarBrandLine.CarBrand;
 import CarBrandLine.CarBrandModel;
@@ -13,14 +14,21 @@ public class RunProductionLine {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		 ProduceCarModels oBuildCar = new ProduceCarModels();
-		 ProduceCarModels.BuildCarType(CarBrandModel.FORD);
-		
-		 ProduceCarModels.BuildCarType(CarBrandModel.BMW);
-		 ProduceCarModels.BuildCarType(CarBrandModel.MERCEDES);
+		ProduceCarModels oBuildCar = new ProduceCarModels();
+		List<CarBrand> oCars = oBuildCar.BuildCarType(CarBrandModel.FORD, 100);
+//		ProduceCarModels.BuildCarType(CarBrandModel.FORD);
+//		ProduceCarModels.BuildCarType(CarBrandModel.BMW);
+//		ProduceCarModels.BuildCarType(CarBrandModel.MERCEDES);
 
-//		processMap(new LinkedHashMap<String, Integer>());
-//		processMap(new TreeMap<String, Integer>());
+		for(CarBrand iteratorVariable : oCars){
+			iteratorVariable.StartEngine();
+			iteratorVariable.StopEngine();
+		}
+		
+		
+		
+		// processMap(new LinkedHashMap<String, Integer>());
+		// processMap(new TreeMap<String, Integer>());
 	}
 
 	public static void processMap(Map<String, Integer> map) {

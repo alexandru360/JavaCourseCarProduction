@@ -1,5 +1,8 @@
 package ProductionLine;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import CarBrandLine.CarBrand;
 import CarBrandLine.CarBrandModel;
 
@@ -46,6 +49,35 @@ public class ProduceCarModels {
 		default:
 			break;
 		}
+	}
+
+	public static List<CarBrand> BuildCarType(CarBrandModel parModelToProduce, int itemsToProduce) {
+		List<CarBrand> oCarb = new ArrayList<CarBrand>();
+		CarBrand oCarItem;
+		int x = 0;
+		do {
+			switch (parModelToProduce) {
+			case BMW:
+				oCarItem = new CarBrand(3, 1.8, "BMV Z3");
+				break;
+
+			case FORD:
+				oCarItem = new CarBrand(3, 5.6, "FORD FOCUS");
+				break;
+
+			case MERCEDES:
+				oCarItem = new CarBrand(3, 1.8, "MERCEDES ceva ?!");
+				break;
+
+			default:
+				// Linie introdusa pentru a ocoli un null pointer exception
+				oCarItem = new CarBrand(3, 0, "Aici nu ajunge !");
+				break;
+			}
+			oCarb.add(oCarItem);
+			x++;
+		} while (x < itemsToProduce);
+		return oCarb;
 	}
 
 }

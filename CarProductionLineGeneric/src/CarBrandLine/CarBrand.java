@@ -44,4 +44,12 @@ public class CarBrand implements CarContract {
 		// TODO Auto-generated method stub
 		System.out.println("Doors: " + getDoors() + " EngineSpec: " + getEngineSpec());
 	}
+	
+	public void StartEngine() {
+		System.out.println("Start engine !");
+	}
+	
+	public void StopEngine() {
+		System.out.println("Stop engine !");
+	}
 }
